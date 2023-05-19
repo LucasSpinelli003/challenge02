@@ -1,6 +1,8 @@
 package br.com.fiap.challenge.model;
 
+import br.com.fiap.challenge.model.Contato;
 
+import javax.print.attribute.standard.JobKOctets;
 import javax.swing.*;
 
 public class Chamado {
@@ -12,30 +14,7 @@ public class Chamado {
     private String cpf ;
     private String descricaoDoProblema ;
     private Contato contato;
-
-    public void fazChamado(){
-        usuario = JOptionPane.showInputDialog("Digite o seu usuario: ");
-        senha = JOptionPane.showInputDialog("Digite a sua senha: ");
-        nomeCompleto = JOptionPane.showInputDialog("Digite o seu nome completo: ");
-        dataDeNascimento = JOptionPane.showInputDialog("Digite a sua data de nascimento: ");
-        rg = JOptionPane.showInputDialog("Digite o seu rg: ");
-        cpf = JOptionPane.showInputDialog("Digite o seu cpf: ");
-        descricaoDoProblema = JOptionPane.showInputDialog("Digite a descrição do problema: ");
-        contato.pegaContato();
-    }
-
-
-    public void exibeChamado (){
-        JOptionPane.showMessageDialog(null,"Exibindo chamado: \n");
-        JOptionPane.showMessageDialog(null,"Usuário: " + usuario);
-       JOptionPane.showMessageDialog(null,"Nome completo:" + nomeCompleto);
-        JOptionPane.showMessageDialog(null,"Data de Nascimento: " + dataDeNascimento);
-        JOptionPane.showMessageDialog(null,"rg: " + rg);
-        JOptionPane.showMessageDialog(null,"cpf: " + cpf);
-        JOptionPane.showMessageDialog(null,"Descrição do problema: " + descricaoDoProblema );
-        JOptionPane.showMessageDialog(null,"Email: " + contato);
-        JOptionPane.showMessageDialog(null,"Telefone : " + contato);
-    }
+    private Veiculo veiculo;
 
     public Chamado(String usuario, String senha, String nomeCompleto, String dataDeNascimento, String rg, String cpf, String descricaoDoProblema) {
         this.usuario = usuario;
@@ -45,6 +24,33 @@ public class Chamado {
         this.rg = rg;
         this.cpf = cpf;
         this.descricaoDoProblema = descricaoDoProblema;
+    }
+
+    public void fazChamado(Contato contato, Veiculo veiculo){
+        usuario = JOptionPane.showInputDialog("Digite o seu usuario: ");
+        senha = JOptionPane.showInputDialog("Digite a sua senha: ");
+        nomeCompleto = JOptionPane.showInputDialog("Digite o seu nome completo: ");
+        dataDeNascimento = JOptionPane.showInputDialog("Digite a sua data de nascimento: ");
+        rg = JOptionPane.showInputDialog("Digite o seu rg: ");
+        cpf = JOptionPane.showInputDialog("Digite o seu cpf: ");
+        descricaoDoProblema = JOptionPane.showInputDialog("Digite a descrição do problema: ");
+        veiculo.pegaDados();
+        contato.pegaContato();
+
+    }
+
+
+    public void exibeChamado (Contato contato,Veiculo veiculo){
+        JOptionPane.showMessageDialog(null,"Exibindo chamado: \n");
+        JOptionPane.showMessageDialog(null,"Usuário: " + usuario);
+       JOptionPane.showMessageDialog(null,"Nome completo:" + nomeCompleto);
+        JOptionPane.showMessageDialog(null,"Data de Nascimento: " + dataDeNascimento);
+        JOptionPane.showMessageDialog(null,"rg: " + rg);
+        JOptionPane.showMessageDialog(null,"cpf: " + cpf);
+        JOptionPane.showMessageDialog(null,"Descrição do problema: " + descricaoDoProblema );
+        veiculo.exibeDados();
+        contato.exibeContato();
+
     }
 
     public String getUsuario() {

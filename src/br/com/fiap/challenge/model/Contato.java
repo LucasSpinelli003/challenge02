@@ -10,11 +10,17 @@ public class Contato {
         this.telefone = telefone;
         this.email = email;
     }
+
     public void pegaContato(){
-        telefone = JOptionPane.showInputDialog("Digite o seu telefone: ");
-        email = JOptionPane.showInputDialog("Digite o seu email.");
+        telefone = JOptionPane.showInputDialog(null,"Digite o seu telefone: ");
+       email = JOptionPane.showInputDialog(null,"Digite o seu email: ");
     }
 
+
+    public void exibeContato() {
+        JOptionPane.showMessageDialog(null,"Telefone: " + telefone);
+        JOptionPane.showMessageDialog(null,"Email: " + email);
+    }
 
 
     public String getTelefone() {
