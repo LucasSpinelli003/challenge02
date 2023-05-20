@@ -41,13 +41,13 @@ public class Chamado {
 
 
     public void exibeChamado (Contato contato,Veiculo veiculo){
-        JOptionPane.showMessageDialog(null,"Exibindo chamado: \n");
-        JOptionPane.showMessageDialog(null,"Usuário: " + usuario);
-       JOptionPane.showMessageDialog(null,"Nome completo:" + nomeCompleto);
-        JOptionPane.showMessageDialog(null,"Data de Nascimento: " + dataDeNascimento);
-        JOptionPane.showMessageDialog(null,"rg: " + rg);
-        JOptionPane.showMessageDialog(null,"cpf: " + cpf);
-        JOptionPane.showMessageDialog(null,"Descrição do problema: " + descricaoDoProblema );
+        System.out.println("Exibindo chamado: \n");
+        System.out.println("Usuario..................: " + usuario);
+        System.out.println("Nome completo............:" + nomeCompleto);
+        System.out.println("Data de Nascimento.......: " + dataDeNascimento);
+        System.out.println("rg:......................:" + rg);
+        System.out.println("cpf......................: " + cpf);
+        System.out.println("Descricao do problema..: " + descricaoDoProblema );
         veiculo.exibeDados();
         contato.exibeContato();
 

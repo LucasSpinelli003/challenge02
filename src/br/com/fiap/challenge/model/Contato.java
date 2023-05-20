@@ -18,8 +18,8 @@ public class Contato {
 
 
     public void exibeContato() {
-        JOptionPane.showMessageDialog(null,"Telefone: " + telefone);
-        JOptionPane.showMessageDialog(null,"Email: " + email);
+        System.out.println("Telefone..................: " + telefone);
+        System.out.println("Email.....................: " + email);
     }
 
 
