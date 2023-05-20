@@ -6,8 +6,6 @@ import javax.print.attribute.standard.JobKOctets;
 import javax.swing.*;
 
 public class Chamado {
-    private String usuario ;
-    private String senha ;
     private String nomeCompleto ;
     private String dataDeNascimento ;
     private String rg ;
@@ -15,10 +13,10 @@ public class Chamado {
     private String descricaoDoProblema ;
     private Contato contato;
     private Veiculo veiculo;
+    private Endereco endereco;
+    private Login login;
 
-    public Chamado(String usuario, String senha, String nomeCompleto, String dataDeNascimento, String rg, String cpf, String descricaoDoProblema) {
-        this.usuario = usuario;
-        this.senha = senha;
+    public Chamado( String nomeCompleto, String dataDeNascimento, String rg, String cpf, String descricaoDoProblema) {
         this.nomeCompleto = nomeCompleto;
         this.dataDeNascimento = dataDeNascimento;
         this.rg = rg;
@@ -26,9 +24,9 @@ public class Chamado {
         this.descricaoDoProblema = descricaoDoProblema;
     }
 
-    public void fazChamado(Contato contato, Veiculo veiculo){
-        usuario = JOptionPane.showInputDialog("Digite o seu usuario: ");
-        senha = JOptionPane.showInputDialog("Digite a sua senha: ");
+    public void fazChamado(Contato contato, Veiculo veiculo, Endereco endereco,Login login,LocalChamado localChamado){
+        login.registraUsuario();
+        login.verificaLogin();
         nomeCompleto = JOptionPane.showInputDialog("Digite o seu nome completo: ");
         dataDeNascimento = JOptionPane.showInputDialog("Digite a sua data de nascimento: ");
         rg = JOptionPane.showInputDialog("Digite o seu rg: ");
@@ -36,37 +34,24 @@ public class Chamado {
         descricaoDoProblema = JOptionPane.showInputDialog("Digite a descrição do problema: ");
         veiculo.pegaDados();
         contato.pegaContato();
-
+        localChamado.pegaLocalChamado();
+        endereco.pegaEndereco();
     }
 
 
-    public void exibeChamado (Contato contato,Veiculo veiculo){
+    public void exibeChamado (Contato contato,Veiculo veiculo, Endereco endereco,Login login,LocalChamado localChamado){
         System.out.println("Exibindo chamado: \n");
-        System.out.println("Usuario..................: " + usuario);
+        System.out.println("Usuario..................: " + login.getRegistroUsuario());
         System.out.println("Nome completo............:" + nomeCompleto);
         System.out.println("Data de Nascimento.......: " + dataDeNascimento);
         System.out.println("rg:......................:" + rg);
         System.out.println("cpf......................: " + cpf);
         System.out.println("Descricao do problema..: " + descricaoDoProblema );
         veiculo.exibeDados();
+        endereco.exibeEndereco();
         contato.exibeContato();
+        localChamado.exibeLocalChamado();
 
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public String getNomeCompleto() {

@@ -3,10 +3,11 @@ package br.com.fiap.challenge.model;
 import javax.swing.*;
 
 import static java.lang.Double.parseDouble;
+import static java.lang.Integer.parseInt;
 
 public class Veiculo {
-    private String modelo,tpCarroceria,mudancaNoVeiculo,peso;
-    private double comprimento,altura,largura,pesoCarga;
+    private String modelo,tpCarroceria,mudancaNoVeiculo;
+    private double comprimento,altura,largura,pesoCarga,peso;
     private int eixos;
 
 
@@ -14,11 +15,12 @@ public class Veiculo {
         modelo = JOptionPane.showInputDialog(null,"Digite o modelo do veiculo: ");
         tpCarroceria = JOptionPane.showInputDialog(null,"Digite o tipo da carroceria: ");
         mudancaNoVeiculo = JOptionPane.showInputDialog(null,"Houve alguma mudança no veículo? se sim qual?: ");
-        peso = (JOptionPane.showInputDialog("Digite o peso do veículo: "));
+        peso = parseDouble(JOptionPane.showInputDialog("Digite o peso do veículo: "+"(Peso em toneladas)"));
         comprimento = parseDouble(JOptionPane.showInputDialog("Digite o comprimento do veículo: "));
         altura = parseDouble(JOptionPane.showInputDialog("Digite a altura do veículo: "));
         largura = parseDouble(JOptionPane.showInputDialog("Digite a largura do veículo: "));
-        pesoCarga = parseDouble(JOptionPane.showInputDialog("Digite o peso da carga do veículo: "));
+        pesoCarga = parseDouble(JOptionPane.showInputDialog("Digite o peso da carga do veículo: "+"(Peso em toneladas)"));
+        eixos = parseInt(JOptionPane.showInputDialog("Digite o numero de eixos do veículo: "));
     }
 
     public void exibeDados(){
@@ -32,7 +34,14 @@ public class Veiculo {
         System.out.println("Peso da carga do veiculo.: " + pesoCarga);
     }
 
-    public Veiculo(String modelo, String tpCarroceria, String mudancaNoVeiculo, String peso, double comprimento, double altura, double largura, double pesoCarga, int eixos) {
+    public double calculaPeso(){
+        double pesoTotal = peso + pesoCarga;
+        return pesoTotal;
+    }
+
+
+
+    public Veiculo(String modelo, String tpCarroceria, String mudancaNoVeiculo, double peso, double comprimento, double altura, double largura, double pesoCarga, int eixos) {
         this.modelo = modelo;
         this.tpCarroceria = tpCarroceria;
         this.mudancaNoVeiculo = mudancaNoVeiculo;
@@ -68,11 +77,11 @@ public class Veiculo {
         this.mudancaNoVeiculo = mudancaNoVeiculo;
     }
 
-    public String getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(String peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
