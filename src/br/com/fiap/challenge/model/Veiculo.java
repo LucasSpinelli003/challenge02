@@ -16,9 +16,9 @@ public class Veiculo {
         tpCarroceria = JOptionPane.showInputDialog(null,"Digite o tipo da carroceria: ");
         mudancaNoVeiculo = JOptionPane.showInputDialog(null,"Houve alguma mudança no veículo? se sim qual?: ");
         peso = parseDouble(JOptionPane.showInputDialog("Digite o peso do veículo: "+"(Peso em toneladas)"));
-        comprimento = parseDouble(JOptionPane.showInputDialog("Digite o comprimento do veículo: "));
-        altura = parseDouble(JOptionPane.showInputDialog("Digite a altura do veículo: "));
-        largura = parseDouble(JOptionPane.showInputDialog("Digite a largura do veículo: "));
+        comprimento = parseDouble(JOptionPane.showInputDialog("Digite o comprimento do veículo: " + "(em metros)"));
+        altura = parseDouble(JOptionPane.showInputDialog("Digite a altura do veículo: " + "(em metros)"));
+        largura = parseDouble(JOptionPane.showInputDialog("Digite a largura do veículo: " + "(em metros)"));
         pesoCarga = parseDouble(JOptionPane.showInputDialog("Digite o peso da carga do veículo: "+"(Peso em toneladas)"));
         eixos = parseInt(JOptionPane.showInputDialog("Digite o numero de eixos do veículo: "));
     }
@@ -32,6 +32,7 @@ public class Veiculo {
         System.out.println("Altura do veiculo........: " + altura);
         System.out.println("Largura do veiculo.......: " + largura);
         System.out.println("Peso da carga do veiculo.: " + pesoCarga);
+        System.out.println("Eixos....................: " + eixos);
     }
 
     public double calculaPeso(){

@@ -49,7 +49,7 @@ public class Endereco {
     }
 
     public void pegaEndereco (){
-        rua = JOptionPane.showInputDialog("Digite o nome da sua rua: ");
+        rua = JOptionPane.showInputDialog("Digite o nome da rua onde você mora: ");
         numero = parseInt(JOptionPane.showInputDialog("Digite o numero da sua rua: "));
         complemento = JOptionPane.showInputDialog("Complemento: ");
         cep = JOptionPane.showInputDialog("Digite o cep: ");

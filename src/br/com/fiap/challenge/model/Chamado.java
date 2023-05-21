@@ -31,11 +31,11 @@ public class Chamado {
         dataDeNascimento = JOptionPane.showInputDialog("Digite a sua data de nascimento: ");
         rg = JOptionPane.showInputDialog("Digite o seu rg: ");
         cpf = JOptionPane.showInputDialog("Digite o seu cpf: ");
+        endereco.pegaEndereco();
         descricaoDoProblema = JOptionPane.showInputDialog("Digite a descrição do problema: ");
         veiculo.pegaDados();
         contato.pegaContato();
         localChamado.pegaLocalChamado();
-        endereco.pegaEndereco();
     }
 
 

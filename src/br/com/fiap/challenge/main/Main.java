@@ -14,11 +14,35 @@ public class Main {
         Login l = new Login("Invalido ", "Invalido ", "Invalido ", "Invalido ");
         LocalChamado lc = new LocalChamado(" ", " ");
 
+
+
         chamado.fazChamado(c,v,e,l,lc);
         chamado.exibeChamado(c,v,e,l,lc);
         m.escolheModal(v);
 
+        //Testando a classe LocalChamado
+        //lc.pegaLocalChamado();
+        //lc.exibeLocalChamado();
 
+        //Testando a classe Login
+        //l.registraUsuario();
+        //l.verificaLogin();
+
+        //Testando a classe Modal
+        // m.escolheModal(v);
+
+        //testando a classe Endereco
+        //e.pegaEndereco();
+        //e.exibeEndereco();
+
+        //Testando a classe Veiculo
+        //v.pegaDados();
+        //v.exibeDados();
+        //v.calculaPeso();
+
+        //Testando a classe Contato
+        //c.pegaContato();
+        //c.exibeContato();
 
     }
 }

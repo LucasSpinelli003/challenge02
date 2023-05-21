@@ -28,7 +28,7 @@ public class LocalChamado {
     }
 
     public void pegaLocalChamado(){
-        endereco = JOptionPane.showInputDialog("Digite o endereço para irmos até você: ");
+        endereco = JOptionPane.showInputDialog("Digite o endereço onde você está, para irmos até você: ");
         pontoDeReferencia = JOptionPane.showInputDialog("Ponto de referência");
     }
     public void exibeLocalChamado(){
